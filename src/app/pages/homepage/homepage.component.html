@@ -1,4 +1,7 @@
-<a [routerLink]="['/child']" *ngIf="pathService.currentPath === '/'"
-  >GO TO CHILD</a
->
+<a [routerLink]="['/child']" *ngIf="currentPath === '/'">GO TO CHILD</a>
+<div class="buttons">
+  <button (click)="incrementCounter()">Increase</button>
+  <button (click)="decrementCounter()">Decrease</button>
+</div>
+<app-wrapper></app-wrapper>
 <router-outlet></router-outlet>

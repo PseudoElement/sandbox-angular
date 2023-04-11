@@ -25,7 +25,7 @@ export class PathService {
     this.subscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((res: any) => {
-        console.log(res.url);
+        // console.log(res.url);
         this.currentPath = res.url;
       });
   }

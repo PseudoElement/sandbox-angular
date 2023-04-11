@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { PathService } from 'src/app/services/path.service';
 import { PathNames } from 'src/app/shared/enums';
+import { decrement, increment } from 'src/app/store/counter';
 
 @Component({
   selector: 'app-homepage',
@@ -10,7 +11,7 @@ import { PathNames } from 'src/app/shared/enums';
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   currentPath: string = this.pathService.currentPath;
-  constructor(public pathService: PathService) {
+  constructor(public pathService: PathService, public store: Store) {
     this.pathService.setCurrentPath();
   }
 
@@ -20,5 +21,18 @@ export class HomepageComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.pathService.unsubscribe();
+  }
+  ngDoCheck() {
+    this.currentPath = this.pathService.currentPath;
+  }
+  ngAfterContentChecked() {
+    if (this.currentPath === '/') {
+    }
+  }
+  incrementCounter() {
+    this.store.dispatch(increment());
+  }
+  decrementCounter() {
+    this.store.dispatch(decrement());
   }
 }

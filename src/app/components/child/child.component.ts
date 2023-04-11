@@ -15,6 +15,11 @@ export class ChildComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.pathService.unsubscribe();
   }
+  ngAfterContentChecked() {
+    if (this.pathService.currentPath === '/child') {
+      console.log('CHILD PAGE');
+    }
+  }
   onClick() {
     this.router.navigate(['']);
   }
