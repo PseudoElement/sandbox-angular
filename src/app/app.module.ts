@@ -15,7 +15,7 @@ import { counterReducer } from './store/counter';
     AppRoutingModule,
     ComponentsModule,
     PagesModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ counter: counterReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent],
