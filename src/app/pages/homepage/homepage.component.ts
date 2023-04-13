@@ -11,6 +11,7 @@ import { decrement, increment } from 'src/app/store/counter';
 })
 export class HomepageComponent implements OnInit, OnDestroy {
   currentPath: string = this.pathService.currentPath;
+  child: string = 'child';
   constructor(public pathService: PathService, public store: Store) {
     this.pathService.setCurrentPath();
   }

@@ -21,6 +21,6 @@ export class ChildComponent implements OnInit, OnDestroy {
     }
   }
   onClick() {
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 }
