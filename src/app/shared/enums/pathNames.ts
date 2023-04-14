@@ -1,4 +1,4 @@
 export enum PathNames {
-  HOME,
-  CHILD,
+     HOME,
+     CHILD,
 }

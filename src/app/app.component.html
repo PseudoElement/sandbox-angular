@@ -1,5 +1,9 @@
-<nav>
-  <a [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
-  <a [routerLink]="'/home'" [routerLinkActive]="'active'">Home</a>
-</nav>
-<router-outlet></router-outlet>
+<div [ngClass]="{ DARK: themeService.isDarkMode, LIGHT: !themeService.isDarkMode, wrapper: true }">
+     <nav>
+          <a [routerLink]="'/home'" [routerLinkActive]="'active'">Home</a>
+          <a [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
+          <a [routerLink]="'/shop'" [routerLinkActive]="'active'">Shop</a>
+     </nav>
+     <button (click)="changeTheme()">Change theme</button>
+     <router-outlet></router-outlet>
+</div>
