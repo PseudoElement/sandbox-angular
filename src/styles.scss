@@ -1,13 +1,11 @@
-$text-color: red;
-$bg-color: null;
 .DARK {
-     --bg-color: rgb(82, 9, 122);
+     --bg-color-root: rgb(82, 9, 122);
      --text-color: white;
      $text-color: blue;
      $bg-color: rgb(82, 9, 122);
 }
 .LIGHT {
-     --bg-color: rgb(123, 180, 215);
+     --bg-color-root: rgb(123, 180, 215);
      --text-color: black;
      $text-color: black;
      $bg-color: rgb(123, 180, 215);

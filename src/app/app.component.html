@@ -1,4 +1,4 @@
-<div [ngClass]="{ DARK: themeService.isDarkMode, LIGHT: !themeService.isDarkMode, wrapper: true }">
+<div [ngClass]="[themeService.isDarkMode ? 'DARK' : 'LIGHT', 'wrapper', title]">
      <nav>
           <a [routerLink]="'/home'" [routerLinkActive]="'active'">Home</a>
           <a [routerLink]="'/about'" [routerLinkActive]="'active'">About</a>
