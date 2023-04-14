@@ -1,6 +1,17 @@
 .transitionWrapper {
      width: 500px;
+     height: 100px;
      background-color: aqua;
      border-radius: 10px;
      box-shadow: 0 0 10px 3px gray;
+     padding: 20px;
+     transition: all 0.5s;
+     position: absolute;
+     left: -1000px;
+}
+.active {
+     left: 50%;
+     // top: 50%;
+     // transform: translate(-50%, 0);
+     width: 500px;
 }

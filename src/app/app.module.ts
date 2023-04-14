@@ -8,10 +8,19 @@ import { PagesModule } from "./modules/pages.module";
 import { StoreModule } from "@ngrx/store";
 import { counterReducer } from "./store/counter";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FeaturesModule } from "./modules/features.module";
 
 @NgModule({
      declarations: [AppComponent],
-     imports: [BrowserModule, AppRoutingModule, ComponentsModule, PagesModule, StoreModule.forRoot({ counter: counterReducer }), BrowserAnimationsModule],
+     imports: [
+          BrowserModule,
+          AppRoutingModule,
+          ComponentsModule,
+          FeaturesModule,
+          PagesModule,
+          StoreModule.forRoot({ counter: counterReducer }),
+          BrowserAnimationsModule,
+     ],
      providers: [],
      bootstrap: [AppComponent],
 })

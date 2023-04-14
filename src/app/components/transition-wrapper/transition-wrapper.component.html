@@ -1,1 +1,3 @@
-<div [ngClass]="['transitionWrapper', active ? 'active' : null]">asdasd</div>
+<div [ngClass]="['transitionWrapper', active ? 'active' : '']" #wrapper>
+     <ng-content></ng-content>
+</div>

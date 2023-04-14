@@ -14,7 +14,7 @@ export class WrapperComponent {
      ngOnInit() {
           //@ts-ignore
           this.count$ = this.store.select(selectCounter);
-          this.count$.subscribe((count: number) => console.log(count));
+          this.count$.subscribe();
      }
      ngDoCheck() {}
 }
