@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="type">
+     <button *ngSwitchCase="ButtonTypes.CLOSE" class="closeBtn" (click)="handleClick()">
+          <mat-icon color="primary">highlight_off</mat-icon>
+     </button>
+     <button *ngSwitchCase="ButtonTypes.OPEN" class="openBtn" (click)="onClick()">
+          {{ text }}
+     </button>
+     <button *ngSwitchCase="ButtonTypes.SUBMIT" class="submitBtn" (click)="onClick()">
+          {{ text }}
+     </button>
+     <button *ngSwitchDefault class="defaultBtn" (click)="onClick()">{{ text }}</button>
+</ng-container>

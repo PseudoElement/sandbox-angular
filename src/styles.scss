@@ -4,14 +4,18 @@
      box-sizing: border-box;
 }
 .DARK {
+     --bg-color-primary: rgb(69, 69, 69);
      --bg-color-root: rgb(82, 9, 122);
      --text-color: white;
+     --text-color-hover: rgb(3, 181, 3);
      $text-color: blue;
      $bg-color: rgb(82, 9, 122);
 }
 .LIGHT {
+     --bg-color-primary: white;
      --bg-color-root: rgb(123, 180, 215);
      --text-color: black;
+     --text-color-hover: rgb(229, 27, 233);
      $text-color: black;
      $bg-color: rgb(123, 180, 215);
 }
