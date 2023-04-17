@@ -1,9 +1,11 @@
 <ng-container *ngIf="isOpened">
      <app-backdrop (click)="closeModal()">
           <app-modal (close)="closeModal()">
-               <input type="text" placeholder="Email" />
-               <input type="password" placeholder="Password" />
-               <app-button (close)="closeModal()" [type]="ButtonTypes.SUBMIT" [text]="'Submit'"></app-button>
+               <form [formGroup]="form">
+                    <app-input [form]="form" [control]="email" [inputData]="inputEmail"></app-input>
+                    <app-input [form]="form" [control]="password" [inputData]="inputPassword"></app-input>
+                    <app-button (close)="closeModal()" [form]="form" [type]="ButtonTypes.SUBMIT" [text]="'Submit'"></app-button>
+               </form>
           </app-modal>
      </app-backdrop>
 </ng-container>

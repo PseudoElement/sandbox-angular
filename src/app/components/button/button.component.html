@@ -5,7 +5,7 @@
      <button *ngSwitchCase="ButtonTypes.OPEN" class="openBtn" (click)="onClick()">
           {{ text }}
      </button>
-     <button *ngSwitchCase="ButtonTypes.SUBMIT" class="submitBtn" (click)="onClick()">
+     <button *ngSwitchCase="ButtonTypes.SUBMIT" type="submit" class="submitBtn" (click)="onSubmit()">
           {{ text }}
      </button>
      <button *ngSwitchDefault class="defaultBtn" (click)="onClick()">{{ text }}</button>

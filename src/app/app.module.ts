@@ -9,10 +9,9 @@ import { StoreModule } from "@ngrx/store";
 import { counterReducer } from "./store/counter";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FeaturesModule } from "./modules/features.module";
-import { InputComponent } from './components/input/input.component';
 
 @NgModule({
-     declarations: [AppComponent, InputComponent],
+     declarations: [AppComponent],
      imports: [
           BrowserModule,
           AppRoutingModule,

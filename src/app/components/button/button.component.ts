@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 import { ButtonTypes } from "src/app/shared/enums";
 
 @Component({
@@ -9,16 +10,17 @@ import { ButtonTypes } from "src/app/shared/enums";
 export class ButtonComponent {
      @Input() type: ButtonTypes = ButtonTypes.SUBMIT;
      @Input() text: string;
-     @Input() onClick: () => void;
+     @Input() onClick?: any;
+     @Input() form: FormGroup;
      @Output() close = new EventEmitter();
      public get ButtonTypes(): typeof ButtonTypes {
           return ButtonTypes;
      }
-     closeModal() {
-          this.close.emit();
+     onSubmit() {
+          console.log(this.form.value);
      }
      handleClick() {
-          this.closeModal();
+          this.close.emit();
           this.onClick();
      }
 }

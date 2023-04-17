@@ -1,1 +1,13 @@
-<p>input works!</p>
+<div [formGroup]="form" class="wrapper">
+     <label [ngClass]="{ active: isActive }" for="{{ inputData.id }}">{{ inputData.name | titlecase }}</label>
+     <input
+          autocomplete="off"
+          (focus)="onFocus()"
+          (blur)="onBlur($event)"
+          name="{{ inputData.name }}"
+          id="{{ inputData.id }}"
+          [formControl]="control"
+          type="{{ isShownPassword ? 'text' : inputData.type }}"
+     />
+     <mat-icon (click)="switchPassword()" *ngIf="inputData.type === InputTypes.PASSWORD">{{ isShownPassword ? "visibility_off" : "visibility" }}</mat-icon>
+</div>
