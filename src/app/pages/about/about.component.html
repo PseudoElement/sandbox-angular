@@ -1,3 +1,6 @@
 <p>about works!</p>
 <app-button [type]="ButtonTypes.OPEN" [text]="'Open modal'" (click)="openModal()"></app-button>
 <app-contact-modal [isOpened]="isOpened" (close)="closeModal()"></app-contact-modal>
+
+<div>Value is {{ count }}</div>
+<button (click)="onClick()">Increment</button>
