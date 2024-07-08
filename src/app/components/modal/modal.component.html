@@ -1,4 +1,4 @@
 <div (click)="onModalClick($event)" class="modal">
-     <app-button (close)="closeModal()" [type]="ButtonTypes.CLOSE"></app-button>
+     <app-button (click)="handleClose()" [type]="ButtonTypes.CLOSE"></app-button>
      <ng-content></ng-content>
 </div>

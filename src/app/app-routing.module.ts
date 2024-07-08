@@ -1,10 +1,11 @@
-import { NgModule } from "@angular/core";
+import { ApplicationRef, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomepageComponent } from "./pages/homepage/homepage.component";
 import { ChildComponent } from "./components/child/child.component";
 import { WrapperComponent } from "./components/wrapper/wrapper.component";
 import { AboutComponent } from "./pages/about/about.component";
 import { ShopComponent } from "./pages/shop/shop.component";
+import { SintolLibDynamicComponentService } from "dynamic-rendering";
 
 const routes: Routes = [
      { path: "", redirectTo: "shop", pathMatch: "full" },
@@ -22,5 +23,6 @@ const routes: Routes = [
 @NgModule({
      imports: [RouterModule.forRoot(routes)],
      exports: [RouterModule],
+     providers: [SintolLibDynamicComponentService]
 })
 export class AppRoutingModule {}

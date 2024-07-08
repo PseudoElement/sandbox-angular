@@ -21,6 +21,6 @@ export class ButtonComponent {
      }
      handleClick() {
           this.close.emit();
-          this.onClick();
+          this.onClick?.();
      }
 }

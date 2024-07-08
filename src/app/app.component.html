@@ -5,5 +5,7 @@
           <a [routerLink]="'/shop'" [routerLinkActive]="'active'">Shop</a>
      </nav>
      <button (click)="changeTheme()">Change theme</button>
+     <button (click)="openExternalLibModal()">Open external lib modal</button>
+     <button (click)="openInternalLibModal()">Open inernal modal using lib service</button>
      <router-outlet></router-outlet>
 </div>

@@ -1,3 +1,10 @@
 .modal {
-     position: relative;
+     position: fixed;
+     width: 300px;
+     height: 400px;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%,-50%);
+
+     background: rgba(0, 255, 200, 0.7);
 }
