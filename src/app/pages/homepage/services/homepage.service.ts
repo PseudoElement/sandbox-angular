@@ -23,9 +23,15 @@ export class HomepageService {
   
     if(target.checked){
       formArray.push(new FormControl(target.value));
+      formArray.controls.forEach(ctrl => {
+        if(ctrl.value !== target.value){
+          ctrl.disable()
+        }
+      })
     } else{
       let i: number = 0;
       formArray.controls.forEach((ctrl) => {
+        ctrl.enable()
         if(ctrl.value == target.value) {
           formArray.removeAt(i);
           return;

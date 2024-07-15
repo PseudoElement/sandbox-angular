@@ -26,16 +26,9 @@
 
 <ng-template #checkboxes let-values let-title>
      <h2>{{ title }}</h2>
-     <div [formGroup]="hpForm" style="display: flex; flex-direction: column; justify-content: baseline;">
-          <ng-container *ngFor="let child of CHILDRENS">
-               <ng-container *ngTemplateOutlet="checkbox; context: { name: child }"></ng-container>
+     <div style="display: flex; flex-direction: column; justify-content: baseline;">
+          <ng-container *ngFor="let child of childrens">
+               <app-checkbox [value]="child.value" [name]="child.label" [disabled]="child.disabled" (onChange)="onCheckChange($event)"></app-checkbox>
           </ng-container>
-     </div>
-</ng-template>
-
-<ng-template #checkbox let-name="name">
-     <div class="checkbox-input">
-          <input type="checkbox" [name]="name" [value]="name" [id]="name" (change)="onCheckChange($event)">
-          <p>{{ name }}</p>
      </div>
 </ng-template>

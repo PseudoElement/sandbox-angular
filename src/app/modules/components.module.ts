@@ -9,10 +9,11 @@ import { MatIconModule } from "@angular/material/icon";
 import { ButtonComponent } from "../components/button/button.component";
 import { InputComponent } from "../components/input/input.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CheckboxComponent } from "../components/checkbox/checkbox.component";
 
 @NgModule({
-     declarations: [ChildComponent, WrapperComponent, TransitionWrapperComponent, BackdropComponent, ModalComponent, ButtonComponent, InputComponent],
-     exports: [ChildComponent, WrapperComponent, TransitionWrapperComponent, BackdropComponent, ModalComponent, MatIconModule, ButtonComponent, InputComponent],
+     declarations: [ChildComponent, WrapperComponent, TransitionWrapperComponent, BackdropComponent, ModalComponent, ButtonComponent, InputComponent, CheckboxComponent],
+     exports: [ChildComponent, WrapperComponent, TransitionWrapperComponent, BackdropComponent, ModalComponent, MatIconModule, ButtonComponent, InputComponent, CheckboxComponent],
      imports: [CommonModule, MatIconModule, FormsModule, ReactiveFormsModule],
 })
 export class ComponentsModule {}

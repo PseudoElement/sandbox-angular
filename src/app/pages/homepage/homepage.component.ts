@@ -6,7 +6,7 @@ import { decrement, increment } from "src/app/store/counter";
 import { users as usersData } from "src/app/shared/constants/users";
 import { HomepageService } from "./services/homepage.service";
 import { CHILDRENS } from "./constants/hp-childrens";
-import { of, startWith } from "rxjs";
+import { BehaviorSubject, tap } from "rxjs";
 
 @Component({
      selector: "app-homepage",
@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
      public readonly INPUT_TYPES = InputTypes
 
-     public readonly CHILDRENS = CHILDRENS
+     public readonly childrens = CHILDRENS
 
      users = usersData;
      currentPath: string = this.pathService.currentPath;
@@ -34,6 +34,11 @@ export class HomepageComponent implements OnInit, OnDestroy {
      }
 
      public onCheckChange(e: Event): void {
+          const target = (e.target as HTMLInputElement)
+          CHILDRENS.forEach(child => {
+               const needDisable = target.checked && target.value !== child.value
+               child.disabled = needDisable ? true : false 
+          })
           this.hpSrv.onCheckChange(e)
      }
 

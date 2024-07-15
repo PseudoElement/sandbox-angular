@@ -1,0 +1,9 @@
+.checkbox-input {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    width: 100px;
+    * {
+         margin-left: 10px;
+    }
+}
