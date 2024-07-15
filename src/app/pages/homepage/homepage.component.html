@@ -5,9 +5,37 @@
           <button (click)="decrementCounter()">Decrease</button>
      </div>
 
+     <main style="margin: 20px; border: 2px solid black; padding: 10px;">
+          <div [formGroup]="hpForm">
+               <app-input [control]="hpForm.controls['name']" [form]="hpForm" [inputData]="{
+                    type: INPUT_TYPES.TEXT,
+                    name: 'name'                    
+               }"></app-input>
+
+               <ng-container *ngTemplateOutlet="checkboxes; context: {title: 'Children'}"></ng-container>
+          </div>
+     </main>
+
      <app-wrapper></app-wrapper>
      <div class="users">
           <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
      </div>
+
      <router-outlet></router-outlet>
 </div>
+
+<ng-template #checkboxes let-values let-title>
+     <h2>{{ title }}</h2>
+     <div [formGroup]="hpForm" style="display: flex; flex-direction: column; justify-content: baseline;">
+          <ng-container *ngFor="let child of CHILDRENS">
+               <ng-container *ngTemplateOutlet="checkbox; context: { name: child }"></ng-container>
+          </ng-container>
+     </div>
+</ng-template>
+
+<ng-template #checkbox let-name="name">
+     <div class="checkbox-input">
+          <input type="checkbox" [name]="name" [value]="name" [id]="name" (change)="onCheckChange($event)">
+          <p>{{ name }}</p>
+     </div>
+</ng-template>
